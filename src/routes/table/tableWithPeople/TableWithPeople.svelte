@@ -1,5 +1,7 @@
 <script>
+    import {v4 as uuid} from 'uuid';
     export let filteredPeople;
+
 </script>
 
 <style>
@@ -27,6 +29,9 @@
     td {
         padding: 5px 0;
     }
+    .center {
+        padding-top: 15px;
+    }
 </style>
 
 <table>
@@ -34,11 +39,23 @@
         <tr>
             <th class:first-th={i === 0} colspan="2">Osoba nr. {i + 1}</th>
         </tr>
-        {#each Object.keys(person) as key, i}
+        {#each Object.keys(person) as key, i (uuid())}
+            {#if typeof person[key] !== "object"}
             <tr>
                 <td>{key}</td>
                 <td>{person[key]}</td>
             </tr>
+                {:else}
+                <tr>
+                    <td colspan="2" class="center">{key}</td>
+                </tr>
+                    {#each Object.keys(person[key]) as data, i}
+                        <tr>
+                            <td>{data}</td>
+                            <td>{person[key][data]}</td>
+                        </tr>
+                    {/each}
+                {/if}
         {/each}
     {/each}
 </table>

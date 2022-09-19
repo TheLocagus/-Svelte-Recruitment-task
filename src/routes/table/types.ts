@@ -4,9 +4,9 @@ export enum SortEnum {
   reset = 'reset'
 }
 
-export interface Person {
-  name: string;
-  lastName: string;
-  age: number;
-  city: string;
-}
+// export interface Person {
+//   name: string;
+//   lastName: string;
+//   age: number;
+//   city: string;
+// }

@@ -1,34 +1,32 @@
-import type {Person} from "../routes/table/types";
+export interface DataInterface {
+  id: number;
+  name: string;
+  data: Record<string, unknown>
+}
 
-export const people: Person[] = [
+export const people: DataInterface[] = [
   {
-    name: 'Bartosz',
-    lastName: 'Kołsut',
-    age: 25,
-    city: 'Warszawa',
+    "id": 1,
+    "name": "aaaa",
+    "data": {
+      "test1": "value1"
+    }
   },
   {
-    name: 'Adam',
-    lastName: 'Małysz',
-    age: 44,
-    city: 'Wisła',
+    "id": 2,
+    "name": "bbbb",
+    "data": {
+      "test3": "value5"
+    }
   },
   {
-    name: 'Andrzej',
-    lastName: 'Gołota',
-    age: 54,
-    city: 'Warszawa',
-  },
-  {
-    name: 'Tomasz',
-    lastName: 'Stasiak',
-    age: 39,
-    city: 'Lublin',
-  },
-  {
-    name: 'Jakub',
-    lastName: 'Koszałka',
-    age: 14,
-    city: 'Gdańsk',
-  },
+    "id": 3,
+    "name": "cccc",
+    "data": {
+      "test4": "value7",
+      "test3": "value9",
+      "test10": "value10"
+    }
+  }
 ]
+
